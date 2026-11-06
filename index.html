@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AGWA Pro: Automated Geospatial Watershed Assessment</title>
+  <meta name="description" content="AGWA Pro is a GIS-based hydrologic modeling tool for ArcGIS Pro that uses common GIS data to set up, run, and map KINEROS2 watershed simulations.">
+  <style>
+    :root {
+      --bg: #f6f8f7;
+      --ink: #1d2b2a;
+      --muted: #55625f;
+      --accent: #1f6f78;
+      --accent-dark: #164f56;
+      --card: #ffffff;
+      --line: #dde5e3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #164f56 0%, #2a8a7f 100%);
+      color: #fff;
+      padding: 4rem 1.5rem 3.5rem;
+      text-align: center;
+    }
+    header h1 { margin: 0 0 .5rem; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; }
+    header p { margin: 0 auto; max-width: 640px; font-size: 1.15rem; opacity: .92; }
+    .badge {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: .2rem .7rem;
+      border: 1px solid rgba(255,255,255,.5);
+      border-radius: 999px;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: .85rem 1.6rem;
+      background: #fff;
+      color: var(--accent-dark);
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .15s ease, box-shadow .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+    main { max-width: 960px; margin: 0 auto; padding: 3rem 1.5rem; }
+    h2 { color: var(--accent-dark); margin-top: 2.5rem; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 1.25rem 1.4rem;
+    }
+    .card h3 { margin: 0 0 .4rem; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+    ol li { margin-bottom: .4rem; }
+    code { background: #e8eeec; padding: .1rem .35rem; border-radius: 4px; font-size: .9em; }
+    a { color: var(--accent); }
+    footer {
+      border-top: 1px solid var(--line);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="badge">AGWA Pro · Beta</span>
+    <h1>AGWA Pro</h1>
+    <p>The Automated Geospatial Watershed Assessment tool: GIS-based hydrologic and erosion modeling inside ArcGIS Pro.</p>
+    <a class="btn" href="https://github.com/ARS-SWRC/agwa" target="_blank" rel="noopener">View AGWA Pro on GitHub →</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>What is AGWA?</h2>
+      <p>
+        AGWA uses widely available GIS data layers to set up, run, and map
+        <a href="https://www.tucson.ars.ag.gov/kineros/" target="_blank" rel="noopener">KINEROS2</a>
+        watershed simulations. It helps researchers, land managers, and planners understand
+        how land cover change, wildfire, and management decisions affect runoff and erosion.
+        AGWA Pro is the Python/ArcPy version built for ArcGIS Pro.
+      </p>
+      <p>
+        It is developed by the USDA-ARS Southwest Watershed Research Center and the University of Arizona.
+        Earlier versions were also developed with the U.S. EPA Office of Research and Development and the University of Wyoming.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key features</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Watershed setup</h3>
+          <p>Delineate, discretize, and parameterize watersheds using public or your own data.</p>
+        </div>
+        <div class="card">
+          <h3>KINEROS2 simulation</h3>
+          <p>Run event-based hydrologic and erosion models. RHEM is included for hillslope-scale rangeland simulations.</p>
+        </div>
+        <div class="card">
+          <h3>Precipitation inputs</h3>
+          <p>Build rainfall files from your own inputs or from the NOAA Precipitation Frequency Database.</p>
+        </div>
+        <div class="card">
+          <h3>Pre- and post-fire modeling</h3>
+          <p>Compare watershed response before and after wildfire to support burned-area assessment.</p>
+        </div>
+        <div class="card">
+          <h3>Management scenarios</h3>
+          <p>Test land cover modifications and stock pond management to see how they change outcomes.</p>
+        </div>
+        <div class="card">
+          <h3>Visualization</h3>
+          <p>Map results and compare scenarios side by side directly in ArcGIS Pro.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Getting started</h2>
+      <ol>
+        <li>Download the latest beta from the <a href="https://github.com/ARS-SWRC/agwa" target="_blank" rel="noopener">GitHub repository</a> and unzip it.</li>
+        <li>Get the AGWA directory (lookup tables and model executables) and tutorial data from the <a href="https://www.tucson.ars.ag.gov/agwa" target="_blank" rel="noopener">AGWA website</a>.</li>
+        <li>Download the gSSURGO soil geodatabase from NRCS.</li>
+        <li>In ArcGIS Pro's Catalog pane, add the toolbox <code>code/AGWA.pyt</code>.</li>
+      </ol>
+      <p>A wildfire case-study tutorial is included in the repository's <code>tutorials</code> folder.</p>
+    </section>
+
+    <section>
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://github.com/ARS-SWRC/agwa" target="_blank" rel="noopener">AGWA Pro source code (GitHub)</a></li>
+        <li><a href="https://github.com/ARS-SWRC/agwa/issues" target="_blank" rel="noopener">Report an issue</a></li>
+        <li><a href="https://www.tucson.ars.ag.gov/agwa" target="_blank" rel="noopener">AGWA website (USDA-ARS)</a></li>
+        <li><a href="https://www.tucson.ars.ag.gov/kineros/" target="_blank" rel="noopener">KINEROS2</a></li>
+        <li><a href="https://dss.tucson.ars.ag.gov/rhem/" target="_blank" rel="noopener">RHEM</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    AGWA Pro · USDA-ARS Southwest Watershed Research Center &amp; University of Arizona<br>
+    <a href="https://github.com/ARS-SWRC/agwa" target="_blank" rel="noopener">github.com/ARS-SWRC/agwa</a>
+  </footer>
+
+</body>
+</html>
